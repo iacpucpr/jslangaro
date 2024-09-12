@@ -1,0 +1,12 @@
+CONFIGURAÇÕES
+
+PFSENSE-SERVER
+REDE1 - virtio NAT
+192.168.122.236
+
+REDE2 - vritio Rede Roteada
+
+VAULT-SERVER
+REDE1 - virtio NAT
+REDE2 - virtio Rede Roteada
+
