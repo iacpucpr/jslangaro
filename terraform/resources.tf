@@ -52,7 +52,7 @@ resource "docker_image" "nginx" {
 }
 resource "docker_container" "nginx" {
   image = docker_image.nginx.image_id
-  name  = "nginx"
+  name  = "infra_nginx"
   restart = "always"
   network_mode = "network_1"
   ports {
@@ -72,10 +72,9 @@ resource "docker_container" "nginx" {
 #}
 # Creating a Docker Container using the latest ubuntu image.
 resource "docker_container" "infra_backup" {
-  image             = "iacpucpr/infra_backup:latest"
+  image             = "iacpucpr/infra_backup"
   name              = "infra_backup"
   must_run          = true
-  publish_all_ports = true
   network_mode = "network_2"
   ports {
     internal = 22
@@ -95,13 +94,13 @@ resource "docker_container" "infra_backup" {
   ]
 }
 # Creating a Docker Image ubuntu with the latest as the Tag.
-#resource "docker_image" "SSH-server" {
-#  name = "ubuntu:latest"
-#}
+resource "docker_image" "ubuntu" {
+  name = "ubuntu:latest"
+}
 # Creating a Docker Container using the latest ubuntu image.
-resource "docker_container" "infra_ssh" {
-  image             = "iacpucpr/infra_ssh"
-  name              = "infra_ssh"
+resource "docker_container" "infra_nas" {
+  image             = docker_image.ubuntu.image_id
+  name              = "infra_nas"
   must_run          = true
   command = [
     "tail",
@@ -109,6 +108,28 @@ resource "docker_container" "infra_ssh" {
     "/dev/null"
   ]
   network_mode = "network_3"
+  ports {
+    internal = 22
+    external = 223
+  }
+  capabilities {
+    add = ["NET_ADMIN"]
+  }
+  devices {
+    host_path = "/dev/net/tun"
+    container_path = "/dev/net/tun"
+  }
+}
+  resource "docker_container" "credential_safe" {
+  image             = "iacpucpr/infra_ssh"
+  name              = "credential_safe"
+  must_run          = true
+  command = [
+    "tail",
+    "-f",
+    "/dev/null"
+  ]
+  network_mode = "network_4"
   ports {
     internal = 22
     external = 221
