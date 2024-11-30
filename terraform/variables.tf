@@ -6,7 +6,7 @@ variable "twingate_login" {
 variable "twingate_api-token" {
   description = "Twingate API-TOKEN provided by twingate"
   type = string
-  default  = "_D-CWFo2tegu2ttEbNaKMEt9yhUlHbpRjC4o9EkcwPPnO_7T4zIAWaS_bOzUUh4EhSNYhSsPExmfJUAhDwCkWKG2SQPY7NnfsByHIako8xxV-KhzTkoYOsq-z_7wLA0VEk3toA"
+  default  = ""
 }
 variable "private_subnet_cidr_blocks" {
   description = "Available cidr blocks for private subnets."
