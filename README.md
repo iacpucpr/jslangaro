@@ -1,6 +1,6 @@
 Este repositório contém o código da aplicação SafeCredential, que implementa um mecanismo de autenticação segura baseado em **Zero Trust** e **Infraestrutura como Código (IaC)**.
 
-# SafeCredential - Autenticação Segura com Zero Trust
+# ZTICode - Autenticação Segura com Zero Trust
 - Python: Aplicação com NIA_Monitor (lado do server) e NIA_Agent (lado do client)
 
 ## Ferramentas de Verificação e Análise
