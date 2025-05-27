@@ -148,10 +148,10 @@ resource "docker_container" "glpi" {
   restart = "always"
   network_mode = "network_7"
   env = [
-    "MARIADB_ROOT_PASSWORD=@@iacpucpr2024@@",
+    "MARIADB_ROOT_PASSWORD=SENHA",
     "MARIADB_DATABASE=glpidb",
     "MARIADB_USER=glpi_user",
-    "MARIADB_PASSWORD=@@iacpucpr@@"
+    "MARIADB_PASSWORD=SENHA"
   ]
   ports {
     internal = "80"
@@ -171,10 +171,10 @@ resource "docker_container" "mariadb" {
   restart = "always"
   network_mode = "network_6"
   env = [
-    "MARIADB_ROOT_PASSWORD=@@iacpucpr2024@@",
+    "MARIADB_ROOT_PASSWORD=SENHA",
     "MARIADB_DATABASE=glpidb",
     "MARIADB_USER=glpi_user",
-    "MARIADB_PASSWORD=@@iacpucpr@@"
+    "MARIADB_PASSWORD=SENHA"
   ]
   capabilities {
     add = ["NET_ADMIN"]
