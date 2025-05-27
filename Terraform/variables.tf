@@ -6,7 +6,7 @@ variable "twingate_login" {
 variable "twingate_api-token" {
   description = "Twingate API-TOKEN provided by twingate"
   type = string
-  default  = "_D-CWFo2tegu2ttEbNaKMEt9yhUlHbpRjC4o9EkcwPPnO_7T4zIAWaS_bOzUUh4EhSNYhSsPExmfJUAhDwCkWKG2SQPY7NnfsByHIako8xxV-KhzTkoYOsq-z_7wLA0VEk3toA"
+  default  = "TOKEN"
 }
 variable "private_subnet_cidr_blocks" {
   description = "Available cidr blocks for private subnets."
@@ -27,7 +27,7 @@ variable "private_subnet_cidr_blocks" {
 variable "redis_password" {
   description = "Senha para o Redis"
   type        = string
-  default     = "@@iacpucpr2024@@"
+  default     = "SENHA"
 }
 
 # Porta HTTPS para o NGINX
@@ -55,7 +55,7 @@ variable "mariadb_port" {
 variable "glpi_db_root_password" {
   description = "Senha de root para o MariaDB no GLPI"
   type        = string
-  default     = "@@iac2024@@"
+  default     = "SENHA"
 }
 
 variable "glpi_db_user" {
@@ -67,14 +67,14 @@ variable "glpi_db_user" {
 variable "glpi_db_password" {
   description = "Senha do usuário glpi para o MariaDB no GLPI"
   type        = string
-  default     = "@@iac2024@@"
+  default     = "SENHA"
 }
 
 # Variável para senha do usuário SSH em todos os containers
 variable "ssh_user_password" {
   description = "Senha do usuário iacpucpr em todos os containers"
   type        = string
-  default     = "@@iac2024@@"
+  default     = "SENHA"
 }
 
 # Variável para nome de usuário SSH nos containers
